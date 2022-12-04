@@ -36,12 +36,6 @@ public class MusicService extends Service {
     mediaPlayer = MediaPlayer.create(this, music[position]);
     mediaPlayer.setLooping(true);
     mediaPlayer.start();
-    return START_STICKY;
-  }
-
-  @Override
-  public void onDestroy() {
-    mediaPlayer.stop();
-    super.onDestroy();
+    return START_REDELIVER_INTENT;
   }
 }

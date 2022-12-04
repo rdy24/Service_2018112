@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
       }
     });
 
-    binding.btnStop.setOnClickListener(view -> stopService(new Intent(MainActivity.this, MusicService.class)));
+    binding.btnStop.setOnClickListener(view -> {
+      MusicService.mediaPlayer.stop();
+    });
   }
 }
